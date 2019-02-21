@@ -21,6 +21,7 @@ void readData(Person a[], int size) {
     a[i].setPayRate(pRate);
     i++;
   }
+  myFile.close();
 }
 
 void writeData(Person a[], int size) {
@@ -34,6 +35,7 @@ void writeData(Person a[], int size) {
     myFile << a[i].fullName() << " ";
     myFile << fixed << setprecision(2) << a[i].totalPay() << endl;
   }
+  myFile.close();
 }
 
 int main() {
