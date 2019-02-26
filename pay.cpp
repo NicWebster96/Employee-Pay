@@ -40,8 +40,8 @@ void writeData(Person a[], int size) {
 
 int main() {
 
-  Person emp[20];
-  readData(emp, 20);
-  writeData(emp, 20);
+  Person employees[20];
+  readData(employees, 20);
+  writeData(employees, 20);
 
 }
