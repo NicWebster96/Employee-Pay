@@ -19,7 +19,7 @@ public:
     string getLastName();
     void setFirstName(string fName);
     string getFirstName();
-    void setPayRate(float rate);
+    void setPayRate(float pRate);
     float getPayRate();
     void setHoursWorked(float hrsWorked);
     float getHoursWorked();

@@ -26,7 +26,7 @@ void Person::setFirstName(string fName) { firstName = fName; }
 
 string Person::getFirstName() { return firstName; }
 
-void Person::setPayRate(float rate) { payRate = rate; }
+void Person::setPayRate(float pRate) { payRate = pRate; }
 
 float Person::getPayRate() { return payRate; }
 
