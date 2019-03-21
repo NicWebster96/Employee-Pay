@@ -4,44 +4,39 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <vector>
 using namespace std;
 
-void readData(Person a[], int size) {
+void readData(vector<Person> &empVec) {
 
-  string lName, fName;
+  string fName, lName;
   float pRate, hWorked;
-  int i = 0;
 
   ifstream myFile("input.txt");
 
   while(myFile >> fName >> lName >> hWorked >> pRate) {
-    a[i].setFirstName(fName);
-    a[i].setLastName(lName);
-    a[i].setHoursWorked(hWorked);
-    a[i].setPayRate(pRate);
-    i++;
+    empVec.emplace_back(fName, lName, hWorked, pRate);
   }
+
   myFile.close();
 }
 
-void writeData(Person a[], int size) {
+void writeData(vector<Person> empVec) {
 
   ofstream myFile("output.txt");
 
-  for (int i = 0; i<size; i++) {
-    if (a[i].fullName() == " ") {
-      break;
-    }
-    myFile << a[i].fullName() << " ";
-    myFile << fixed << setprecision(2) << a[i].totalPay() << endl;
+  for (int i = 0; i<empVec.size(); i++) {
+    myFile << empVec.at(i).fullName() << " " <<
+              fixed << setprecision(2) <<
+              empVec.at(i).totalPay() << " " << endl;
   }
   myFile.close();
 }
 
 int main() {
 
-  Person employees[20];
-  readData(employees, 20);
-  writeData(employees, 20);
+  vector<Person> employees;
+  readData(employees);
+  writeData(employees);
 
 }

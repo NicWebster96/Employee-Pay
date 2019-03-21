@@ -14,6 +14,7 @@ private:
     float  hoursWorked;
 public:
     Person();
+    Person(string fName, string lName, float pRate, float hWorked);
     void setLastName(string lName);
     string getLastName();
     void setFirstName(string fName);
@@ -24,6 +25,8 @@ public:
     float getHoursWorked();
     float totalPay();
     string fullName();
+
+
 };
 #endif
 //end person.h
